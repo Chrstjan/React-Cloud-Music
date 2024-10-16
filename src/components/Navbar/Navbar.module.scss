@@ -1,11 +1,42 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/animations";
 @use "../../styles/variables" as *;
 
+.hiddenStyling {
+  display: none;
+}
+
 .navStyling {
+  @include m.flexBox(column, center, center);
+  padding: 0;
+  position: absolute;
+  top: 5%;
+  left: 48.5%;
+  transform: translate(-48.5%);
+  animation: mobileNavbar 0.3s linear;
+  background: $header-background-color;
+  width: 100%;
+  padding: 1rem 0rem;
+
   li {
     list-style-type: none;
+
     a {
       color: $header-nav-color;
       text-decoration: none;
+
+      &.activeLink {
+        color: $active-navlink-color;
+      }
+    }
+  }
+
+  &.lightModeStyling {
+    background: $header-lightmode-background-color;
+    li {
+      a {
+        color: $header-background-color;
+      }
     }
   }
 }

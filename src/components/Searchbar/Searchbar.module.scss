@@ -1,0 +1,24 @@
+@use "../../styles/mixins" as m;
+
+.searchStyling {
+  @include m.flexBox(row, center, center, 0.5rem);
+  position: relative;
+
+  input {
+    width: 6rem;
+    border: 0;
+    height: 3vh;
+    border-radius: 5px;
+
+    &:focus {
+      width: 9rem;
+    }
+  }
+  svg {
+    position: absolute;
+    top: 0;
+    right: 2%;
+    transform: translate(0, -16%);
+    width: 15%;
+  }
+}

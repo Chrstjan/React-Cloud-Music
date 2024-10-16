@@ -9,4 +9,10 @@
     height: 4px;
     background: $header-nav-color;
   }
+
+  &.lightModeStyling {
+    .barStyling {
+      background: $header-background-color;
+    }
+  }
 }

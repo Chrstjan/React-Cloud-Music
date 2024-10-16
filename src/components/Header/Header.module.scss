@@ -2,11 +2,24 @@
 @use "../../styles/variables" as *;
 
 .headerStyling {
-  @include m.flexBox(row, space-evenly, center);
+  @include m.flexBox(row, space-between, center);
   background: $header-background-color;
+  padding: 0.5rem 0.4rem;
 
   svg {
     font-size: 5vh;
     fill: $header-nav-color;
+
+    &:nth-last-child(4) {
+      width: 6rem;
+    }
+  }
+
+  &.lightModeStyling {
+    background: $header-lightmode-background-color;
+
+    svg {
+      fill: $header-background-color;
+    }
   }
 }

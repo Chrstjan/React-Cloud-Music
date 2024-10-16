@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { Paths } from "../../router/Paths";
 import s from "./Navbar.module.scss";
 
-export const Navbar = () => {
+export const Navbar = ({ isLightMode, burgermenuOpen }) => {
   const navMenu = [
     {
       path: Paths.home,
@@ -12,11 +12,20 @@ export const Navbar = () => {
 
   return (
     <nav>
-      <ul className={s.navStyling}>
+      <ul
+        className={`${burgermenuOpen ? s.navStyling : s.hiddenStyling} ${
+          isLightMode ? s.lightModeStyling : ""
+        }`}
+      >
         {navMenu.map((item) => {
           return (
             <li key={item.text}>
-              <NavLink to={item.path}>{item.text}</NavLink>
+              <NavLink
+                className={({ isActive }) => (isActive ? s.activeLink : "")}
+                to={item.path}
+              >
+                {item.text}
+              </NavLink>
             </li>
           );
         })}

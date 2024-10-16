@@ -1,8 +1,14 @@
 import s from "./Burgermenu.module.scss";
 
-export const Burgermenu = () => {
+export const Burgermenu = ({ isLightMode, setBurgermenuOpen }) => {
+  const handleBurgermenu = () => {
+    setBurgermenuOpen((prev) => !prev);
+  };
   return (
-    <div className={s.burgermenu}>
+    <div
+      onClick={() => handleBurgermenu()}
+      className={`${s.burgermenu} ${isLightMode ? s.lightModeStyling : ""}`}
+    >
       <span className={s.barStyling}></span>
       <span className={s.barStyling}></span>
       <span className={s.barStyling}></span>

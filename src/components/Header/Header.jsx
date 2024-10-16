@@ -1,5 +1,11 @@
 import s from "./Header.module.scss";
 
-export const Header = ({ children }) => {
-  return <header className={s.headerStyling}>{children}</header>;
+export const Header = ({ children, isLightMode }) => {
+  return (
+    <header
+      className={`${s.headerStyling} ${isLightMode ? s.lightModeStyling : ""}`}
+    >
+      {children}
+    </header>
+  );
 };
