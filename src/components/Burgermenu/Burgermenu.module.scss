@@ -1,0 +1,12 @@
+@use "../../styles/variables" as *;
+
+.burgermenu {
+  display: block;
+  .barStyling {
+    display: block;
+    margin: 6px 2px;
+    width: 20px;
+    height: 4px;
+    background: $header-nav-color;
+  }
+}

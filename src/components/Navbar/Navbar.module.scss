@@ -1,0 +1,11 @@
+@use "../../styles/variables" as *;
+
+.navStyling {
+  li {
+    list-style-type: none;
+    a {
+      color: $header-nav-color;
+      text-decoration: none;
+    }
+  }
+}

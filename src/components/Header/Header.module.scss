@@ -1,0 +1,12 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as *;
+
+.headerStyling {
+  @include m.flexBox(row, space-evenly, center);
+  background: $header-background-color;
+
+  svg {
+    font-size: 5vh;
+    fill: $header-nav-color;
+  }
+}
