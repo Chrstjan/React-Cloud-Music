@@ -1,0 +1,30 @@
+@use "../../../styles/mixins" as m;
+@use "../../../styles/variables" as *;
+
+.hiddenStyling {
+  display: none;
+}
+
+.linkStyling {
+  @include m.flexBox(column, center, center, 0.5rem);
+  background: $header-background-color;
+  border-radius: 5px;
+  padding: 0.7rem 1rem;
+  position: absolute;
+  top: 7%;
+  left: 73%;
+  transform: translate(-50%);
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &.lightmodeStyling {
+    background: $header-lightmode-background-color;
+
+    a {
+      color: $header-background-color;
+    }
+  }
+}
